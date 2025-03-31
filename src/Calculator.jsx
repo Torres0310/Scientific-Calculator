@@ -5,23 +5,23 @@ const Calculator = () => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
 
-  // Handle Button Click
+  
   const handleClick = (value) => {
     setInput((prev) => {
       if (/[+\-*/.]/.test(value) && /[+\-*/.]$/.test(prev)) {
-        return prev; // Prevent multiple consecutive operators
+        return prev; 
       }
       return prev + value;
     });
   };
 
-  // Clear Input
+
   const handleClear = () => setInput("");
 
-  // Delete Last Character
+
   const handleDelete = () => setInput((prev) => prev.slice(0, -1));
 
-  // Perform Calculation
+ 
   const handleCalculate = () => {
     try {
       let expression = input
@@ -39,10 +39,12 @@ const Calculator = () => {
 
   return (
     <div className="calculator">
+      {/* Display Screen */}
       <div className="display">
         <input type="text" value={input} readOnly />
       </div>
 
+      {/* Buttons Grid */}
       <div className="buttons">
         {/* Top Row: Clear and Delete */}
         <button className="clear" onClick={handleClear}>C</button>
@@ -51,10 +53,9 @@ const Calculator = () => {
         <button onClick={() => handleClick(")")}>)</button>
 
         {/* Scientific Functions */}
-        <button onClick={() => handleClick("sin(")}>sin</button>
-        <button onClick={() => handleClick("cos(")}>cos</button>
-        <button onClick={() => handleClick("tan(")}>tan</button>
-        <button onClick={() => handleClick("log(")}>log</button>
+        {["sin(", "cos(", "tan(", "log("].map((func) => (
+          <button key={func} onClick={() => handleClick(func)}>{func.replace("(", "")}</button>
+        ))}
 
         {/* Number Pad */}
         {["7", "8", "9", "/"].map((btn) => (
@@ -77,11 +78,12 @@ const Calculator = () => {
         ))}
 
         {/* Special Functions */}
-        <button onClick={() => handleClick("π")}>π</button>
-        <button onClick={() => handleClick("√")}>√</button>
-        <button onClick={() => handleClick("^")}>^</button>
+        {["π", "√", "^"].map((func) => (
+          <button key={func} onClick={() => handleClick(func)}>{func}</button>
+        ))}
       </div>
 
+      {/* History Section */}
       <div className="history">
         <h3>History</h3>
         <ul>

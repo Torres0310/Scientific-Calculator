@@ -1,19 +1,21 @@
+/* ======= Global Styles ======= */
 :root {
+  /* Font and Text Settings */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Color and Theme */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 }
 
-/* Responsive Container */
+/* ======= Layout ======= */
 body {
   margin: 0;
   display: flex;
@@ -26,25 +28,26 @@ body {
   box-sizing: border-box;
 }
 
-/* Responsive Headings */
+/* ======= Headings ======= */
 h1 {
   font-size: 2.5em;
   line-height: 1.2;
   text-align: center;
 }
 
-/* Responsive Links */
+/* ======= Links ======= */
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
+
 a:hover {
   color: #535bf2;
 }
 
-/* Responsive Buttons */
+/* ======= Buttons ======= */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -66,6 +69,7 @@ button:focus-visible {
   outline: 3px auto -webkit-focus-ring-color;
 }
 
+/* ======= Responsive Design ======= */
 @media (max-width: 768px) {
   body {
     padding: 15px;
@@ -81,7 +85,7 @@ button:focus-visible {
   }
 }
 
-/* Light Mode Styles */
+/* ======= Light Mode Styles ======= */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

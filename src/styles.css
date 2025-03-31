@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #121212, #1e1e2e);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -12,29 +12,51 @@ body {
 
 /* Calculator Container */
 .calculator {
-  width: 95%;
+  width: 90%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Display */
+.display {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .display input {
   width: 100%;
-  height: 70px;
-  font-size: 1.8rem;
+  height: 80px;
+  font-size: 2rem;
   text-align: right;
-  padding: 10px;
+  padding: 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background: rgba(0, 0, 0, 0.2);
   color: white;
   outline: none;
+  font-weight: bold;
+  box-shadow: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  overflow-x: auto; 
+  white-space: nowrap; 
 }
+
+/* Fix for long numbers overflowing */
+.display input::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+
+.display input:focus {
+  outline: none; /* Removes blue highlight on focus */
+}
+
 
 /* Button Grid */
 .buttons {
@@ -54,15 +76,17 @@ button {
   font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Button Hover & Active States */
 button:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.97);
 }
 
 /* Special Buttons */
@@ -83,39 +107,38 @@ button:active {
 }
 
 .equal {
-  background: #20bf6b;
+  background: #27ae60;
   grid-column: span 2;
 }
 
 .equal:hover {
-  background: #1e9b57;
+  background: #1e8449;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .buttons {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 15px;
-  }
-
   .display input {
-    height: 60px;
-    font-size: 1.5rem;
+    height: 65px; /* Reduce height for smaller screens */
+    font-size: 1.5rem; /* Adjust font size */
+    padding: 12px;
   }
 }
 
-/* History */
+@media (max-width: 480px) {
+  .display input {
+    height: 55px; /* Smaller input for compact screens */
+    font-size: 1.3rem; /* Further reduce font size */
+    padding: 10px;
+  }
+}
+
+/* History Section */
 .history {
   margin-top: 20px;
   max-height: 150px;
   overflow-y: auto;
   text-align: left;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
 }
 
