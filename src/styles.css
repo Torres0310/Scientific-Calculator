@@ -1,4 +1,4 @@
-/* Body Styling */
+/* General Styles */
 body {
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@ body {
   max-width: 400px;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   text-align: center;
@@ -44,7 +44,7 @@ body {
   margin-top: 20px;
 }
 
-/* Calculator Buttons */
+/* Buttons */
 button {
   background: rgba(255, 255, 255, 0.15);
   color: white;
@@ -74,6 +74,14 @@ button:active {
   background: #c0392b;
 }
 
+.delete {
+  background: #f39c12;
+}
+
+.delete:hover {
+  background: #e67e22;
+}
+
 .equal {
   background: #20bf6b;
   grid-column: span 2;
@@ -100,7 +108,7 @@ button:active {
   }
 }
 
-/* History Section */
+/* History */
 .history {
   margin-top: 20px;
   max-height: 150px;
